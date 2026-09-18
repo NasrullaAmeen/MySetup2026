@@ -1,7 +1,7 @@
 ---
 tags: [research, security, tfa, totp, sso, authelia, authentik, ssh]
 created: 2026-09-17 21:38:22 +05
-modified: 2026-09-17 21:42:45 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
 # TFA & SSO for the Homelab
@@ -45,7 +45,7 @@ pvesh create /access/tfa/darko@pve --type totp \
 
 ## SSH
 
-- Key-only already: PasswordAuthentication no, PermitRootLogin no (done on ProxDev).
+- Key-only already: PasswordAuthentication no, PermitRootLogin no (done on OmaLaptop).
 - Homelab: key+passphrase is effectively 2FA; pam_google_authenticator overkill unless SSH is internet-exposed or multi-operator.
 - If added: install libpam-google-authenticator, run google-authenticator per user, nullok during rollout, verify timedatectl sync. fail2ban optional (no passwords to brute-force).
 

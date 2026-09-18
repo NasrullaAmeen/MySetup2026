@@ -8,7 +8,7 @@ assignees: ""
 
 ## Doc
 
-<!-- e.g. HARDWARE.md, NETWORKING.md, ProxDev.md, ProxLab.md -->
+<!-- e.g. HARDWARE.md, NETWORKING.md, OmaLaptop.md, ProxLab.md -->
 
 ## What's outdated / wrong / missing
 

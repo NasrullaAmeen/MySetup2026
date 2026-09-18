@@ -1,14 +1,14 @@
 ---
 tags: [plan, proxlab, proxmox, homelab, hardware]
 created: 2026-09-17 15:59:00 +05
-modified: 2026-09-18 09:53:00 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
 # ProxLab - server note (homelab)
 
 Stationary homelab Proxmox host. Will be carved from the X99 workstation
 (hostname `omarchy`, currently running Omarchy/Arch as a desktop). Independent
-from ProxDev (this laptop). Plan docs for that host: [proxdev.md](proxdev.md),
+from OmaLaptop (this laptop). Plan docs for that host: [omalaptop.md](omalaptop.md),
 [networking.md](networking.md).
 
 ## Identity
@@ -19,7 +19,7 @@ from ProxDev (this laptop). Plan docs for that host: [proxdev.md](proxdev.md),
 | Role | HomeLab Proxmox server |
 | Current hostname | `omarchy` -> will become `proxlab` |
 | Current OS | Omarchy (Arch), kernel 7.2.5-3-omarchy |
-| TODO | Preserve `/etc/hostname`, PVE install (like ProxDev: `pve-no-subscription`, user instead of root, root SSH off) |
+| TODO | Preserve `/etc/hostname`, PVE install (like OmaLaptop: `pve-no-subscription`, user instead of root, root SSH off) |
 
 ## Hardware stack (read from this PC, 2026-09-18)
 
@@ -43,7 +43,7 @@ from ProxDev (this laptop). Plan docs for that host: [proxdev.md](proxdev.md),
 | sda | 931.5G | WDC WDS100T2B0B-00YS70 (WD Blue 3D, SATA SSD) | SATA | **VM disk pool candidate** |
 | sdb | 931.5G | ST1000LM035-1RK172 (Seagate BarraCuda 2.5, SATA HDD) | SATA | VM disk / bulk storage candidate |
 | sdc | 931.5G | ST1000LM049-2GH172 (Seagate BarraCuda 2.5, SATA HDD) | SATA | VM disk / bulk storage candidate |
-| sdd | 931.5G | PNY 1TB SATA SSD | **USB SATA** | btrfs "Hdscythe" backup target (shared with ProxDev backups) |
+| sdd | 931.5G | PNY 1TB SATA SSD | **USB SATA** | btrfs "Hdscythe" backup target (shared with OmaLaptop backups) |
 | zram0 | 109.9G | - | - | swap |
 
 - 3x SATA bays usable: WD SSD + 2x Seagate HDD = plenty for VM disks. No L2ARC/ZIL NVMes; keep ZFS pool on the SATA SSD or use LVM-thin on a mirrored pair.
@@ -90,8 +90,8 @@ desktop VM (PCIe passthrough group 83/84/85), NAS/LXC services._
 
 ## Firewall / VLAN (future, per-server)
 
-- Own firewall rules and its own VLAN setup - **not shared** with ProxDev.
-- Cross-network to ProxDev (10.10.10.x / 10.20.0.0/24) **allowed only via
+- Own firewall rules and its own VLAN setup - **not shared** with OmaLaptop.
+- Cross-network to OmaLaptop (10.10.10.x / 10.20.0.0/24) **allowed only via
   explicit rules** permitting specific inter-server traffic.
 
 ## Open questions
@@ -102,5 +102,5 @@ desktop VM (PCIe passthrough group 83/84/85), NAS/LXC services._
 
 ## See also
 
-- ProxDev: [proxdev.md](proxdev.md)
+- OmaLaptop: [omalaptop.md](omalaptop.md)
 - Shared networking context: [networking.md](networking.md)

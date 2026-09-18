@@ -1,7 +1,7 @@
 ---
 tags: [research, proxmox, api, automation, pvesh, curl, scripting]
 created: 2026-09-17 21:38:22 +05
-modified: 2026-09-17 21:42:45 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
 # Proxmox REST API Automation

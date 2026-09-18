@@ -1,12 +1,12 @@
 ---
 tags: [research, homelab, proxmox, security, hardening]
 created: 2026-09-17 21:24:01 +05
-modified: 2026-09-17 21:42:45 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
 # Proxmox Security Hardening
 
-Research date: 2026-09-17. Current state on ProxDev: darko@pve admin, root@pam disabled, root SSH blocked.
+Research date: 2026-09-17. Current state on OmaLaptop: darko@pve admin, root@pam disabled, root SSH blocked.
 
 ## Baseline checklist
 

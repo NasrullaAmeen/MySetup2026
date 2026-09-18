@@ -1,13 +1,13 @@
 ---
-tags: [plan, networking, proxdev, laptop, wireless, nat]
+tags: [plan, networking, omalaptop, laptop, wireless, nat]
 created: 2026-09-17 15:59:00 +05
-modified: 2026-09-18 09:40:00 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
-# Networking - portable headless networking (PHN16S-71 / ProxDev)
+# Networking - portable headless networking (PHN16S-71 / OmaLaptop)
 
 Adapted from the portable-headless Proxmox runbook, with this laptop's real
-interface names and the ProxDev VM plan.
+interface names and the OmaLaptop VM plan.
 
 ## 1. Goal
 
@@ -61,38 +61,41 @@ flowchart TB
     UP --> H --> NAT --> BR
     BR <--> M
     BR <--> O
-    M -.->|"https://10.20.0.1:8006 - ssh root@10.20.0.1"| H
+    M -.->|"https://10.20.0.1:8006 - ssh darko@pve@10.20.0.1"| H
 ```
 
 ## 4. IP plan (10.20.0.0/24 inner + home subnets)
 
-Home side: router 10.10.10.1 (10.10.10.0/24) now also carries ProxDev itself
-at 10.10.10.10 (2026-09-17 reality - the planned 10.10.20.0/24 MGMT subnet
-was dropped). ProxLab still planned on 10.10.30.1/10.10.30.0/24. The inner
-bridge (10.20.0.0/24) deliberately avoids all of them and the ISP-modem trap
-10.0.0.1; VMs never change when uplinks do.
+Home side: router 10.10.10.1 (10.10.10.0/24) now also carries OmaLaptop itself
+at 10.10.10.10 - the pivot (2026-09-18) reuses that address for the Omarchy
+laptop (old PVE mgmt IP, wiped). The laptop is DHCP on Wi-Fi, so 10.10.10.10
+must be DHCP-reserved on the router (static lease by MAC) or set statically.
+The planned 10.10.20.0/24 MGMT subnet was dropped. ProxLab still planned on
+10.10.30.1/10.10.30.0/24. The inner bridge (10.20.0.0/24) deliberately avoids
+all of them and the ISP-modem trap 10.0.0.1; VMs never change when uplinks do.
 
 Each Proxmox host keeps its own private VM bridge so the two internal ranges
 never collide:
 
-- **ProxDev** vmbr0 - 10.20.0.0/24 (this laptop's VMs)
+- **OmaLaptop** vmbr0 - 10.20.0.0/24 (this laptop's VMs)
 - **ProxLab** vmbr0 - 10.30.0.0/24 (homelab server's VMs, future)
 
 Future: firewalls and VLAN segmentation are added to each server separately -
 every host owns its own firewall rules and its own VLAN setup; nothing is
-shared between ProxDev and ProxLab. The two hosts' networks do cross (home
+shared between OmaLaptop and ProxLab. The two hosts' networks do cross (home
 subnets via 10.10.10.1, VM bridges reachable cross-server), but only through
 explicit per-host firewall rules.
 
 | Device | Address | Purpose |
 |---|---|---|
 | Home router | 10.10.10.1 (10.10.10.0/24) | LAN gateway/router |
-| **ProxDev** (this laptop, PVE) | 10.10.10.10 (10.10.10.0/24) | mgmt :8006 - live (2026-09-17) |
+| **OmaLaptop** (host, Omarchy; PVE is the nested ProxDev VM) | 10.10.10.10 (10.10.10.0/24) | mgmt :8006 (host DNAT -> ProxDev) |
 | **ProxLab** (homelab server) | 10.10.30.1 (10.10.30.0/24) | future |
-| ProxDev (vmbr0) | 10.20.0.1/24 | internal gw + :8006 backup path |
+| OmaLaptop (vmbr0) | 10.20.0.1/24 | internal gw + :8006 backup path |
 | MainArch (MainVM) | 10.20.0.10/24 | main desktop/manage VM |
-| MainWin11 | 10.20.0.11/24 | iGPU-swap MainOS |
-| GameWin11 | 10.20.0.12/24 | dGPU |
+| GameWin11 | 10.20.0.11/24 | dGPU (GPU gaming VM) |
+| MainWin11 | 10.20.0.12/24 | iGPU-swap MainOS |
+| ProxDev (nested PVE VM) | 10.20.0.30/24 | :8006 via host DNAT 10.10.10.10:8006 |
 | DevWin11 / DevArch / DevDeb / DevMac | 10.20.0.20-23/24 | dev tier |
 | VM gateway / DNS | 10.20.0.1 / 1.1.1.1, 8.8.8.8 | NAT + fixed upstream DNS |
 
@@ -204,7 +207,7 @@ systemctl restart dnsmasq && systemctl enable dnsmasq
 
 ## 11. Join a new Wi-Fi from MainArch
 
-MainArch -> `https://10.20.0.1:8006` (or `ssh root@10.20.0.1`) -> add a
+MainArch -> `https://10.20.0.1:8006` (or `ssh darko@pve@10.20.0.1`) -> add a
 `network={...}` block, then `wpa_cli -i wlp128s20f3 reconfigure`. Works even
 when the host currently has no uplink - the vmbr0 path is always alive.
 Emergency paths if MainVM is untouchable: USB tether, known hotspot, travel
@@ -237,7 +240,8 @@ whole host. MainVM stopped = host offline. More fragile - last resort.
 
 ## 14. Remote management
 
-- **At home:** `https://10.10.10.10:8006` (ProxDev on 10.10.10.0/24, live).
+- **At home:** `https://10.10.10.10:8006` - host DNAT keeps the same URL on
+  the Omarchy laptop, forwarding :8006 to the nested PVE guest (10.20.0.30).
 - **Everywhere else:** install **Tailscale (or ZeroTier) on the host** while
   you still have a wire. Stable `100.x.y.z` address -> `https://100.x.y.z:8006`
   from anywhere; works on any Wi-Fi. Never expose :8006 on public networks.
@@ -271,10 +275,26 @@ Internet, no public DNS (unless local DNS exists); open connections drop.
 uplink (Wi-Fi wlp128s20f3 or wired enp130s0/enp0s13f0u1u4u4)
    | host NAT + ip_forward
 vmbr0 10.20.0.1/24  -- MainArch 10.20.0.10
-                    -- MainWin11 10.20.0.11
-                    -- GameWin11 10.20.0.12
+                    -- GameWin11 10.20.0.11 (dGPU)
+                    -- MainWin11 10.20.0.12 (iGPU swap)
+                    -- nested ProxDev PVE 10.20.0.30 (:8006 via host DNAT)
                     -- Dev* 10.20.0.20-23
 ```
 
 Managed from MainArch via :8006 / SSH. Fallbacks: phone hotspot, USB tether,
 travel router.
+
+## 18. Wi-Fi reliability extras (research/33)
+
+- Keep `linux-firmware` current: Intel cards (CNVi, newer BE-series) can lose
+  features / fail to associate on the stock PVE firmware set. `apt install -y
+  linux-firmware` in Phase A.
+- Disable laptop Wi-Fi power management - it adds latency and drops packets,
+  and GameWin11 games ride this uplink:
+  `iw dev wlp128s20f3 set power_save off` (persist via a udev rule or unit).
+- Wi-Fi watchdog: a tiny systemd unit that pings a gateway and bounces the
+  card (`ip link set wlan down/up`, restart wpa_supplicant if stuck) on N
+  failures. Without it a dead association also silently kills all VM Internet.
+- Research chain: research/33-pve-host-on-wifi.md explains why bridging wlan
+  is impossible (iwlwifi has no station 4addr) and covers routed/parprouted
+  options if NAT ever blocks a use-case.

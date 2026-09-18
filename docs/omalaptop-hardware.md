@@ -1,10 +1,10 @@
 ---
 tags: [proxmox, hardware, server, inventory]
 created: 2026-09-17 20:39:00 +05
-modified: 2026-09-17 21:18:51 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
-# ProxDev - Full Hardware Stack
+# OmaLaptop - Full Hardware Stack
 
 ## Summary
 
@@ -21,7 +21,7 @@ modified: 2026-09-17 21:18:51 +05
 
 ## Platform
 
-- **Node**: ProxDev (10.10.10.10)
+- **Node**: OmaLaptop (10.10.10.10)
 - **Proxmox VE**: pve-manager 9.2.20 (release 9.2)
 - **Kernel**: Linux 7.0.2-6-pve, x86_64
 - **Boot**: EFI mode, Secure Boot disabled

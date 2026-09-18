@@ -1,7 +1,7 @@
 ---
 tags: [plan, hardware, laptop, proxmox, iommu]
 created: 2026-09-17 15:59:00 +05
-modified: 2026-09-18 09:40:00 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
 # Hardware - machine spec (as of 2026-09-17)
@@ -90,7 +90,7 @@ Every passthrough target (iGPU, dGPU, both NVMe) sits in its own IOMMU group.
 
 ---
 
-## Impact on the ProxDev plan (laptop constraints)
+## Impact on the OmaLaptop plan (laptop constraints)
 
 1. **Both internal M.2 slots are busy and allocated** - slot 1 = VM pool
    (hynix P41 1TB), slot 2 = Proxmox VE (WD SN520 256GB). 256GB is enough for

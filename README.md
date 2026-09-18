@@ -1,9 +1,10 @@
 # Setup 2026
 
 Personal notes + planning docs for the Proxmox/homelab setup, running on the
-Acer Predator PHN16S-71 laptop (host **ProxDev**, PVE node `prodev`).
+Acer Predator PHN16S-71 laptop (host **OmaLaptop**; nested **ProxDev** PVE VM
+inside it hosts the lab tier).
 
-- **[plan/](plan/)**: Plan docs - hardware, ProxDev build, networking,
+- **[plan/](plan/)**: Plan docs - hardware, OmaLaptop build, networking,
   ProxLab.
 - **[docs/](docs/)**: Live notes - access/credentials, hardware status,
   tasks, changelog. See [docs/README.md](docs/README.md) for the index.
@@ -15,16 +16,16 @@ Acer Predator PHN16S-71 laptop (host **ProxDev**, PVE node `prodev`).
 - **[plan/hardware.md](plan/hardware.md)** - Full spec of the PHN16S-71
   laptop (Acer Predator): CPU, memory, storage, GPUs, networking,
   USB/Thunderbolt, IOMMU groups, thermals; how the constraints shape the
-  ProxDev plan.
-- **[plan/proxdev.md](plan/proxdev.md)** - The ProxDev build plan: Proxmox VE
-  on this laptop hosting a multiverse of VMs (Main/Game/Dev tiers), GPU
-  passthrough rules, storage layout, resource budget, install runbook.
-  **IN USE** at https://10.10.10.10:8006.
+  OmaLaptop plan.
+- **[plan/omalaptop.md](plan/omalaptop.md)** - The OmaLaptop build plan:
+  Omarchy desktop + nested ProxDev PVE VM hosting the lab tier
+  (Main/Game/Dev tiers), GPU passthrough rules, storage layout, resource
+  budget, install runbook. PIVOTED 2026-09-18 (no bare-metal PVE).
 - **[plan/networking.md](plan/networking.md)** - Portable headless networking
   runbook: bridge/NAT design, multi-SSID Wi-Fi, routing, remote management,
   troubleshooting.
 - **[plan/proxlab.md](plan/proxlab.md)** - Notes for "ProxLab", a separate
-  stationary homelab Proxmox server, independent from ProxDev.
+  stationary homelab Proxmox server, independent from OmaLaptop.
 
 ## Agent/doc conventions
 
@@ -39,5 +40,5 @@ policy, cross-reachable only through explicit rules:
 
 | Host | Role | Home LAN MGMT | Internal VM bridge |
 |---|---|---|---|
-| **ProxDev** | PHN16S-71 laptop, in the homelab | 10.10.10.10 (10.10.10.0/24) | 10.20.0.0/24 |
+| **OmaLaptop** | PHN16S-71 laptop, Omarchy host; nested ProxDev PVE VM | 10.10.10.10 (10.10.10.0/24) | 10.20.0.0/24 |
 | **ProxLab** | X99 dual-Xeon workstation (omarchy), station | 10.10.30.1 (10.10.30.0/24) | 10.30.0.0/24 |

@@ -1,12 +1,12 @@
 ---
 tags: [research, homelab, proxmox, networking, vlan, firewall, tailscale]
 created: 2026-09-17 21:24:01 +05
-modified: 2026-09-17 21:42:45 +05
+modified: 2026-09-18 18:25:03 +05
 ---
 
 # Homelab Networking - VLANs, Firewall, Tailscale
 
-Research date: 2026-09-17. Target: home network 10.10.10.0/24, ProxDev 10.10.10.10, 2.5GbE Realtek + onboard NICs.
+Research date: 2026-09-17. Target: home network 10.10.10.0/24, OmaLaptop 10.10.10.10, 2.5GbE Realtek + onboard NICs.
 
 ## Proxmox networking model
 

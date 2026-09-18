@@ -4,7 +4,7 @@
 
 ## Docs touched
 
-<!-- e.g. HARDWARE.md, NETWORKING.md, ProxDev.md, ProxLab.md -->
+<!-- e.g. HARDWARE.md, NETWORKING.md, OmaLaptop.md, ProxLab.md -->
 
 ## Checklist
 
