@@ -1,7 +1,7 @@
 ---
 tags: [plan, index, proxdev, proxlab]
 created: 2026-09-18 09:40:00 +05
-modified: 2026-09-18 09:40:00 +05
+modified: 2026-09-18 09:53:00 +05
 ---
 
 # Plan Index
@@ -19,7 +19,8 @@ Planning docs for the Proxmox setup (merged 2026-09-17 from MySetup).
   bridge/NAT design, multi-SSID Wi-Fi, routing, remote management,
   troubleshooting. Home LAN set at 10.10.10.10 (10.10.10.0/24).
 - **[proxlab.md](proxlab.md)** - Notes for "ProxLab", a separate stationary
-  homelab Proxmox server, independent from ProxDev.
+  homelab Proxmox server, independent from ProxDev. Hardware captured: X99
+  dual-Xeon E5-2660 v4 workstation (omarchy) - 28C/56T, 109G RAM, RX 5700 XT.
 
 ## Layout
 

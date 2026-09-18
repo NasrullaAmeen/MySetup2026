@@ -1,7 +1,7 @@
 ---
 tags: [tasks, todo, docs]
 created: 2026-09-17 20:53:22 +05
-modified: 2026-09-18 09:40:00 +05
+modified: 2026-09-18 09:53:00 +05
 ---
 
 # Tasks
@@ -22,6 +22,7 @@ modified: 2026-09-18 09:40:00 +05
 
 ## Homelab (new)
 
+- [ ] Repurpose X99 workstation (`omarchy`) as ProxLab - PVE install on nvme0n1, hardware captured in plan/proxlab.md (2026-09-18)
 - [ ] AdGuard Home / Pi-hole as first LXC (research/09-homelab-services.md, 10-lxc-containers.md; one-line install via research/11-community-scripts.md)
 - [ ] Docker VM for self-hosted apps - decide LXC vs VM (research/23-docker-patterns.md)
 - [ ] TFA (TOTP) for darko@pve (research/06-security-hardening.md, 21-tfa-sso.md)

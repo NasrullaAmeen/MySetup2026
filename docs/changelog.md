@@ -1,10 +1,17 @@
 ---
 tags: [changelog, docs]
 created: 2026-09-17 20:53:22 +05
-modified: 2026-09-18 09:40:00 +05
+modified: 2026-09-18 09:53:00 +05
 ---
 
 # Changelog
+
+## 2026-09-18 09:53
+
+- Captured the hardware stack of the X99 workstation (`omarchy`, 2x Xeon
+  E5-2660 v4 / 28C-56T, 109G DDR4, RX 5700 XT, 4x 1TB + Lexar NVMe) into
+  plan/proxlab.md - this PC will become **ProxLab**. IOMMU groups 83/84/85
+  mapped for GPU passthrough.
 
 ## 2026-09-18
 

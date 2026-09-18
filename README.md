@@ -40,4 +40,4 @@ policy, cross-reachable only through explicit rules:
 | Host | Role | Home LAN MGMT | Internal VM bridge |
 |---|---|---|---|
 | **ProxDev** | PHN16S-71 laptop, in the homelab | 10.10.10.10 (10.10.10.0/24) | 10.20.0.0/24 |
-| **ProxLab** | Stationary homelab server (future) | 10.10.30.1 (10.10.30.0/24) | 10.30.0.0/24 |
+| **ProxLab** | X99 dual-Xeon workstation (omarchy), station | 10.10.30.1 (10.10.30.0/24) | 10.30.0.0/24 |
