@@ -1,10 +1,14 @@
 ---
 tags: [tasks, todo, docs]
 created: 2026-09-17 20:53:22 +05
-modified: 2026-09-17 21:43:07 +05
+modified: 2026-09-18 09:40:00 +05
 ---
 
 # Tasks
+
+## Merge (2026-09-18)
+
+- [x] Merge plan docs (hardware/networking/proxdev/proxlab) into Setup repo under plan/ (see ../plan/README.md)
 
 ## Infrastructure
 
@@ -33,7 +37,7 @@ modified: 2026-09-17 21:43:07 +05
 
 ## Security
 
-- [x] Store darko@pve password + API token in Bitwarden (item `prodev - Proxmox VE`)
+- [x] Store darko@pve password + API token in Bitwarden (item `ProxDev - Proxmox VE`)
 - [ ] Move remaining hardcoded credentials in notes into Bitwarden placeholders
 - [ ] Review/scope API token privileges
 - [ ] Enable TFA for darko@pve?

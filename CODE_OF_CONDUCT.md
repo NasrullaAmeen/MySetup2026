@@ -1,7 +1,7 @@
 # Code of Conduct
 
 This is a private, single-owner notes repo (see [LICENSE](LICENSE) and
-[CONTRIBUTING.md](CONTRIBUTING.md)) — it has no external contributors or
+[CONTRIBUTING.md](CONTRIBUTING.md)) - it has no external contributors or
 public community to govern.
 
 If this repo is ever opened up to collaborators, the expectation is simple:

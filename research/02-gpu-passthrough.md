@@ -66,7 +66,7 @@ Verify: `dmesg | grep -i -e DMAR -e IOMMU`, `find /sys/kernel/iommu_groups/* -ma
 
 Sweet spot: 1-8B quantized models with 1-2 GB KV/context overhead. Audio (HDMI) subdevice: omit for headless AI; pass only for gaming VM.
 
-## Recommended for prodev
+## Recommended for ProxDev
 
 LXC container with host NVIDIA driver + Ollama (no VFIO). Only consider VM passthrough later for isolation or a Windows gaming VM, and only with a pinned safe PVE kernel + reset-bug mitigation.
 

@@ -1,17 +1,22 @@
 ---
 tags: [docs, index, setup]
 created: 2026-09-17 20:53:22 +05
-modified: 2026-09-17 21:43:07 +05
+modified: 2026-09-18 09:40:00 +05
 ---
 
 # Docs Index
 
 ## Documents
 
-- [prodev-notes.md](./prodev-notes.md) - Proxmox access, credentials, admin/root hardening.
-- [prodev-hardware.md](./prodev-hardware.md) - full hardware stack of the prodev server.
+- [proxdev-notes.md](./proxdev-notes.md) - Proxmox access, credentials, admin/root hardening.
+- [proxdev-hardware.md](./proxdev-hardware.md) - full hardware stack of the ProxDev server.
 - [changelog.md](./changelog.md) - record of all changes made.
 - [tasks.md](./tasks.md) - open tasks / TODOs.
+
+## Plan
+
+Planning docs (hardware, ProxDev build, networking, ProxLab) live in
+[../plan/README.md](../plan/README.md).
 
 ## Research
 

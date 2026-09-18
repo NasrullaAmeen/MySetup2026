@@ -45,7 +45,7 @@ pvesh create /access/tfa/darko@pve --type totp \
 
 ## SSH
 
-- Key-only already: PasswordAuthentication no, PermitRootLogin no (done on prodev).
+- Key-only already: PasswordAuthentication no, PermitRootLogin no (done on ProxDev).
 - Homelab: key+passphrase is effectively 2FA; pam_google_authenticator overkill unless SSH is internet-exposed or multi-operator.
 - If added: install libpam-google-authenticator, run google-authenticator per user, nullok during rollout, verify timedatectl sync. fail2ban optional (no passwords to brute-force).
 

@@ -6,7 +6,7 @@ modified: 2026-09-17 21:42:45 +05
 
 # Proxmox Security Hardening
 
-Research date: 2026-09-17. Current state on prodev: darko@pve admin, root@pam disabled, root SSH blocked.
+Research date: 2026-09-17. Current state on ProxDev: darko@pve admin, root@pam disabled, root SSH blocked.
 
 ## Baseline checklist
 

@@ -4,7 +4,7 @@ created: 2026-09-17 20:39:00 +05
 modified: 2026-09-17 21:18:51 +05
 ---
 
-# prodev - Full Hardware Stack
+# ProxDev - Full Hardware Stack
 
 ## Summary
 
@@ -21,7 +21,7 @@ modified: 2026-09-17 21:18:51 +05
 
 ## Platform
 
-- **Node**: prodev (10.10.10.10)
+- **Node**: ProxDev (10.10.10.10)
 - **Proxmox VE**: pve-manager 9.2.20 (release 9.2)
 - **Kernel**: Linux 7.0.2-6-pve, x86_64
 - **Boot**: EFI mode, Secure Boot disabled

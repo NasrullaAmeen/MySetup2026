@@ -46,7 +46,7 @@ Deep-research notes on homelab / Proxmox topics. Each note has its own tags and 
 - [21-tfa-sso.md](./21-tfa-sso.md) - PVE TFA, Authelia/Authentik SSO, SSH 2FA.
 - [22-monitoring-stack.md](./22-monitoring-stack.md) - Prometheus + pve-exporter + Grafana + Alertmanager/ntfy.
 
-## Applied to prodev
+## Applied to ProxDev
 
-- prodev: Intel Core Ultra 9 275HX, 62.2 GB RAM, RTX 5060 Max-Q, 2x NVMe. See [../docs/prodev-hardware.md](../docs/prodev-hardware.md).
+- ProxDev: Intel Core Ultra 9 275HX, 62.2 GB RAM, RTX 5060 Max-Q, 2x NVMe. See [../docs/proxdev-hardware.md](../docs/proxdev-hardware.md).
 - Research date: 2026-09-17.

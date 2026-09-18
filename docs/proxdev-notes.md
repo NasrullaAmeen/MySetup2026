@@ -1,17 +1,17 @@
 ---
 tags: [proxmox, credentials, server, access, admin]
 created: 2026-09-17 20:28:39 +05
-modified: 2026-09-17 21:18:51 +05
+modified: 2026-09-18 09:40:00 +05
 ---
 
 # Proxmox Server Notes
 
-## prodev (10.10.10.10)
+## ProxDev (10.10.10.10)
 
 - **Proxmox VE**: 9.2.20 (release 9.2)
 - **Web UI**: https://10.10.10.10:8006/
-- **Node**: prodev - status: online
-- **Hardware**: see [prodev-hardware.md](./prodev-hardware.md)
+- **Node**: ProxDev - status: online (PVE node id `prodev`)
+- **Hardware**: see [proxdev-hardware.md](./proxdev-hardware.md)
 
 ### Resources (2026-09-17 20:44)
 
@@ -30,7 +30,7 @@ modified: 2026-09-17 21:18:51 +05
 
 ## Access - 2026-09-17 root harden
 
-> Credentials stored in Bitwarden - vault item: `prodev - Proxmox VE` (id `2cc66d2e-18e9-4aec-8c8c-b4c801087393`). Usernames/tokens below are redacted; get real values from Bitwarden (`bw get item 2cc66d2e-...`).
+> Credentials stored in Bitwarden - vault item: `ProxDev - Proxmox VE` (id `2cc66d2e-18e9-4aec-8c8c-b4c801087393`). Usernames/tokens below are redacted; get real values from Bitwarden (`bw get item 2cc66d2e-...`).
 
 | User | Realm | Role | Status |
 |------|-------|------|--------|
@@ -41,7 +41,7 @@ modified: 2026-09-17 21:18:51 +05
 
 - **Userid**: darko@pve
 - **Role**: Administrator (ACL on `/`, propagate) - full web + API access
-- **Password**: Bitwarden (`prodev - Proxmox VE`)
+- **Password**: Bitwarden (`ProxDev - Proxmox VE`)
 - **API token**: Bitwarden (`darko@pve!clitoken` - token_secret field)
 
 ### root@pam - DISABLED
@@ -73,7 +73,7 @@ curl -sk -X POST https://10.10.10.10:8006/api2/json/access/ticket \
 ```mermaid
 flowchart LR
     C[Client 10.10.10.152/24 enp7s0] -->|LAN| GW[Gateway 10.10.10.1]
-    GW --> P[prodev 10.10.10.10]
+    GW --> P[ProxDev 10.10.10.10]
     P -->|"8006 web/API"| W[Web UI - darko@pve]
     P -.->|"22 SSH root DISABLED"| X[root SSH blocked]
     P --> S[(local-lvm vms)]
@@ -81,7 +81,7 @@ flowchart LR
 
 ## TODO
 
-- [x] Store darko@pve password + token in Bitwarden (item: `prodev - Proxmox VE`)
+- [x] Store darko@pve password + token in Bitwarden (item: `ProxDev - Proxmox VE`)
 - [x] Disable root SSH login on host (PermitRootLogin no)
 - [ ] Verify web UI "Shell" works as darko@pve
 - [ ] Decide GPU passthrough / VM plan (RTX 5060 idle)

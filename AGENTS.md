@@ -1,7 +1,7 @@
 ---
 tags: [convention, agents, setup]
 created: 2026-09-17 20:39:30 +05
-modified: 2026-09-17 21:17:42 +05
+modified: 2026-09-18 09:35:08 +05
 ---
 
 # AGENTS.md
@@ -12,7 +12,7 @@ modified: 2026-09-17 21:17:42 +05
 
 ## Purpose
 
-Defines how AI agents (Claude, opencode, etc.) operate inside `~/Projects/Setup/`. Notes live in `docs/`. Index: [docs/README.md](./docs/README.md).
+Defines how AI agents (Claude, opencode, etc.) operate inside `~/Projects/Setup/`. Live notes live in `docs/` (index: [docs/README.md](./docs/README.md)), plan docs in `plan/` (index: [plan/README.md](./plan/README.md)), research notes in `research/` (index: [research/README.md](./research/README.md)).
 
 ## Mandatory conventions
 

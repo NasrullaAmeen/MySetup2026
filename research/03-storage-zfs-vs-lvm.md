@@ -78,7 +78,7 @@ Cannot convert root install disk in place. Options: add disks and create a ZFS p
 - ZFS 2.3.4 snapshot-access kernel panic fixed in 2.4.0.
 - Keep pools < 80% full; no SLOG needed on NVMe; consumer NVMe without PLP = sync-write durability risk (acceptable homelab).
 
-## Recommendation for prodev
+## Recommendation for ProxDev
 
 ZFS installed on the 1 TB NVMe (root + VM zvols). 256 GB as second single-disk pool for ISOs/templates. ashift=12, lz4, atime=off, 16K volblocksize, ARC cap 16 GiB, monthly scrub + trim, PBS (separate box) with snapshots.
 

@@ -6,7 +6,7 @@ modified: 2026-09-17 21:42:45 +05
 
 # Proxmox Homelab Architecture and Best Practices
 
-Research date: 2026-09-17. Target: prodev (PVE 9.2.20, Core Ultra 9 275HX 24C/24T, 62 GB RAM, RTX 5060, 2x NVMe, greenfield).
+Research date: 2026-09-17. Target: ProxDev (PVE 9.2.20, Core Ultra 9 275HX 24C/24T, 62 GB RAM, RTX 5060, 2x NVMe, greenfield).
 
 ## VM vs LXC per service
 
