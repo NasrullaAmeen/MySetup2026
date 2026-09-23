@@ -1,10 +1,22 @@
 ---
 tags: [changelog, docs]
 created: 2026-09-17 20:53:22 +05
-modified: 2026-09-18 18:25:03 +05
+modified: 2026-09-23 05:08:44 +05
 ---
 
 # Changelog
+
+## 2026-09-23 05:08 - Renamed Omarchy-setup-2026 -> OmaLaptop, detached from GitHub
+
+- Renamed the nested desktop-config repo (formerly `Omarchy-setup-2026/`) to
+  `OmaLaptop/`; removed its `origin` remote so it is now local-only (was
+  `github.com/NasrullaAmeen/Omarchy-setup-2026`, left as-is upstream,
+  unlinked).
+- Dropped the public-mirror sync workflow from that repo
+  (`scripts/sync-to-public.sh`, `PUBLIC_MANIFEST.txt`) and fixed internal
+  path/name references in its README and `fixes/006`, `007`, `009`.
+- No references to the old name existed in this top-level repo's own docs
+  (plan/, docs/, research/) - only the subrepo's own files needed updates.
 
 ## 2026-09-18 18:30 - Rename: ProxDev = the nested PVE VM inside OmaLaptop
 

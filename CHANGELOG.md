@@ -2,6 +2,13 @@
 
 All notable changes to this repository are documented here.
 
+## 2026-09-23 (rename + detach)
+
+- Renamed the nested desktop-config repo `Omarchy-setup-2026/` -> `OmaLaptop/`;
+  removed its `origin` remote (now local-only; the GitHub repos are left
+  as-is, just unlinked). Dropped its public-mirror sync workflow and fixed
+  internal name/path references.
+
 ## 2026-09-18 (pivot + rename)
 
 - Pivoted: no bare-metal PVE on the laptop. OmaLaptop = Omarchy host (PHN16S-71);
