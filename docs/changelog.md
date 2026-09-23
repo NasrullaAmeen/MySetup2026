@@ -1,10 +1,19 @@
 ---
 tags: [changelog, docs]
 created: 2026-09-17 20:53:22 +05
-modified: 2026-09-23 05:08:44 +05
+modified: 2026-09-23 05:29:00 +05
 ---
 
 # Changelog
+
+## 2026-09-23 05:29 - OmaLaptop reattached to GitHub; AGENTS.md added
+
+- Added AGENTS.md/CLAUDE.md to OmaLaptop mirroring this repo's note
+  conventions (frontmatter, ASCII-only prose, project tag `omalaptop`), and
+  retrofitted frontmatter + ASCII fixes into its existing notes.
+- Reattached OmaLaptop's `origin` remote to the same GitHub repo it was
+  detached from (`github.com/NasrullaAmeen/Omarchy-setup-2026`, unchanged
+  upstream) and pushed all local commits (fast-forward, no divergence).
 
 ## 2026-09-23 05:08 - Renamed Omarchy-setup-2026 -> OmaLaptop, detached from GitHub
 
